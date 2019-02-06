@@ -266,7 +266,7 @@ int main (int argc, char** argv)
 	int full = samplerate/ook_carrier;
 	if (s < ook_start)
 		printf("----");
-	while (s < ook_start) {
+	while (s < OOK_BIT / 4) {
 		carrierAngle = c * tau / full;
 		txbufferI[s] = (int8_t)(127.0 * sin(carrierAngle));
 		txbufferQ[s] = (int8_t)(127.0 * cos(carrierAngle));
